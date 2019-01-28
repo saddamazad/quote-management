@@ -32,18 +32,18 @@ class QuoteManagement{
         /* Init Custom Post and Taxonomy Types */
         add_action('init', array(&$this, 'cmb_initialize_cmb_meta_boxes'), 9999);
 		
-		/* quotes page */
-		//add_filter('single_template', array(&$this, 'get_quote_page_template'));
+	/* quotes page */
+	//add_filter('single_template', array(&$this, 'get_quote_page_template'));
 
-		add_filter('template_include', array(&$this, 'qmgt_set_taxonomy_template'));
+	add_filter('template_include', array(&$this, 'qmgt_set_taxonomy_template'));
     }
 	
     /**
      * Load default custom post type for osky community band member info
      */
     public function register_qmgt_custom_post() {
-		require_once( QMGT_ROOT . '/qmgt-custom-post-type.php');				
-	}
+	require_once( QMGT_ROOT . '/qmgt-custom-post-type.php');				
+    }
 	
 	/**
 	 * Initialize the metabox class.
@@ -56,14 +56,14 @@ class QuoteManagement{
 	/**
 	 * Load quotes page template
 	 */
-	public function get_quote_page_template($single_template) {
+	/*public function get_quote_page_template($single_template) {
 		 global $post;
 	
 		 if ($post->post_type == 'interactive_table') {
 			  $single_template = dirname( __FILE__ ) . '/templates/single-interactive_table.php';
 		 }
 		 return $single_template;
-	}
+	}*/
 
 	public function qmgt_set_taxonomy_template( $template ) {
 	
